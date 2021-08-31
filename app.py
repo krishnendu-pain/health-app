@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import joblib
+# import pickle
 from flask import request
 import numpy as np
 
@@ -19,7 +20,7 @@ def diabetes():
 def diabetes_collect(to_predict_list, size):
     to_predict = np.array(to_predict_list).reshape(1, size)
     if size == 8:
-        loaded_model = joblib.load(r'E:\projects\health\model\diabetes_model.pkl')
+        loaded_model = joblib.load(r'diabetes_model.pkl')          # pickle.load(open('diabetes_model.pkl', 'rb'))
         result = loaded_model.predict(to_predict)
     return result[0]
 
@@ -50,7 +51,7 @@ def heart():
 def heart_collect(to_predict_list, size):
     to_predict = np.array(to_predict_list).reshape(1, size)
     if size == 11:
-        loaded_model = joblib.load(r'E:\projects\health\model\heart_model.pkl')
+        loaded_model = joblib.load(r'heart_model.pkl')
         result = loaded_model.predict(to_predict)
     return result[0]
 
@@ -81,7 +82,7 @@ def liver():
 def liver_collect(to_predict_list, size):
     to_predict = np.array(to_predict_list).reshape(1, size)
     if size == 9:
-        loaded_model = joblib.load(r'E:\projects\health\model\liver_model.pkl')
+        loaded_model = joblib.load(r'liver_model.pkl')
         result = loaded_model.predict(to_predict)
     return result[0]
 
