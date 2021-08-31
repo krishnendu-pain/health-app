@@ -7,7 +7,7 @@ import joblib
 
 
 # Load the dataset
-df = pd.read_csv(r"E:\projects\health_app\data\liver.csv")
+df = pd.read_csv(r"E:\projects\health\data\liver.csv")
 
 df.rename(columns={'Dataset': 'disease'}, inplace=True)
 df.dropna(inplace=True)
@@ -48,4 +48,4 @@ print("---------------------")
 print(cnf_matrix)
 print("_____________________")
 
-joblib.dump(model, r"E:\projects\health\model\liver_model.pkl")
+joblib.dump(model, r"liver_model.pkl")

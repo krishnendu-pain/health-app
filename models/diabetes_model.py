@@ -3,12 +3,12 @@ import pandas as pd
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-import pickle
-# import joblib
+# import pickle
+import joblib
 
 
 # Load the dataset
-df = pd.read_csv(r"E:\projects\health_app\data\diabetes.csv")
+df = pd.read_csv(r"E:\projects\health\data\diabetes.csv")
 
 # Splitting dependent & independent variables
 y = df['Outcome']
@@ -43,5 +43,5 @@ print("---------------------")
 print(cnf_matrix)
 print("_____________________")
 
-# joblib.dump(model, r"E:\projects\health\model\diabetes_model.pkl")
-pickle.dump(model, open('diabetes_model.pkl', 'wb'))
+joblib.dump(model, r"diabetes_model.pkl")
+# pickle.dump(model, open('diabetes_model.pkl', 'wb'))

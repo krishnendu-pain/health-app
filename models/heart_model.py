@@ -7,7 +7,7 @@ import joblib
 
 
 # Load the dataset
-df = pd.read_csv(r"E:\projects\health_app\data\heart.csv")
+df = pd.read_csv(r"E:\projects\health\data\heart.csv")
 
 # Splitting dependent & independent variables
 y = df['DEATH_EVENT']
@@ -42,4 +42,4 @@ print("---------------------")
 print(cnf_matrix)
 print("_____________________")
 
-joblib.dump(model, r"E:\projects\health\model\heart_model.pkl")
+joblib.dump(model, r"heart_model.pkl")
