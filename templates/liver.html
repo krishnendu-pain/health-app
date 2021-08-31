@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!--Mask-->
+    <div id="intro" class="container-fluid view ">
+      <h1 class="text-center text-capitalize pt-5">Know your chances of getting liver disease in one Click!</h1>
+      <hr class="w-75 mx-auto pt-5">
+      <div class="row mb-5">
+        <div class="col-lg-6 col-md-6 col-12 my-auto">
+          <img src="{{ url_for('static', filename='/img/liver.jpg') }}" class="float-left">
+        </div>
+        <div class="col-lg-6 col-md-6 col-12">
+          <form action="{{ url_for('liver_predict') }}" method="post">
+            <div class="form-group">
+              <!-- TODO : Year to accept only year date picker -->
+              <label for="age">Age</label>
+              <input class="form-control" type="number" id="age" name="age" required="required" placeholder="Age">
+            </div>
+            <div class="form-group">
+              <label>What is your gender?</label>
+              <div>
+                <label class="radio-inline"><input class="form-control" type="radio" name="gender" value="1" checked>Male</label>
+                <label class="radio-inline"><input class="form-control" type="radio" name="gender" value="0">Female</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="bilirubin">Direct Bilirubin value</label>
+              <input class="form-control" type="text" id="bilirubin" name="bilirubin" required="required" placeholder="Direct Bilirubin value">
+            </div>
+            <div class="form-group">
+              <label for="alkaline">Alkaline Phosphotase value</label>
+              <input class="form-control" type="number" id="alkaline" name="alkaline" required="required" placeholder="Alkaline Phosphotase value">
+            </div>
+            <div class="form-group">
+              <label for="alamine">Alamine Aminotransferase value</label>
+              <input class="form-control" type="number" id="alamine" name="alamine" required="required" placeholder="Alamine Aminotransferase value">
+            </div>
+            <div class="form-group">
+              <label for="aspartate">Aspartate Aminotransferase value</label>
+              <input class="form-control" type="number" id="aspartate" name="aspartate" required="required" placeholder="Aspartate Aminotransferase value">
+            </div>
+            <div class="form-group">
+              <label for="protein">Total Proteins value</label>
+              <input class="form-control" type="text" id="protein" name="protein" required="required" placeholder="Total Proteins value">
+            </div>
+            <div class="form-group">
+              <label for="albumin">Albumin value</label>
+              <input class="form-control" type="text" id="albumin" name="albumin" required="required" placeholder="Albumin value">
+            </div>
+            <div class="form-group">
+              <label for="albumin_globulin">Albumin and Globulin Ratio</label>
+              <input class="form-control" type="text" id="albumin_globulin" name="albumin_globulin" required="required" placeholder="Albumin and Globulin Ratio">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-danger">Predict</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--/.Mask-->
+{% endblock content %}
